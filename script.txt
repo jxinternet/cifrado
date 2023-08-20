@@ -1,0 +1,42 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const inputText = document.getElementById("inputText");
+  const encryptionKey = document.getElementById("encryptionKey");
+  const encryptButton = document.getElementById("encryptButton");
+  const decryptButton = document.getElementById("decryptButton");
+  const outputArea = document.getElementById("outputArea");
+  const studentName = document.getElementById("studentName");
+  const studentID = document.getElementById("studentID");
+
+  encryptButton.addEventListener("click", () => {
+    const texto = inputText.value;
+    const clave = encryptionKey.value;
+
+    // Lógica de cifrado
+    const textoCifrado = cifrarVernam(texto, clave);
+
+    // Mostrar el texto cifrado en el área de salida
+    outputArea.textContent = "Texto Cifrado:\n" + textoCifrado;
+  });
+
+  decryptButton.addEventListener("click", () => {
+    const textoCifrado = inputText.value;
+    const clave = encryptionKey.value;
+
+    // Lógica de descifrado
+    const textoDescifrado = descifrarVernam(textoCifrado, clave);
+
+    // Mostrar el texto descifrado en el área de salida
+    outputArea.textContent = "Texto Descifrado:\n" + textoDescifrado;
+  });
+
+  // Función de cifrado Vernam
+  function cifrarVernam(texto, clave) {
+    // ... (resto de la lógica de cifrado)
+  }
+
+  // Función de descifrado Vernam
+  function descifrarVernam(textoCifrado, clave) {
+    // ... (resto de la lógica de descifrado)
+  }
+});
+
